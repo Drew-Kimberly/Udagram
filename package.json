@@ -36,7 +36,7 @@
     "postinstall": "npm run bootstrap",
     "start": "lerna run start --stream",
     "test": "lerna run test --stream",
-    "typecheck": "lerna run typecheck --stream -- --noEmit",
+    "typecheck": "lerna run typecheck --stream",
     "api:build": "npm run build -- --scope='udagram-restapi'",
     "api:lint": "npm run lint -- --scope='udagram-restapi'",
     "api:lint:fix": "npm run lint:fix -- --scope='udagram-restapi'",

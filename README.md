@@ -6,4 +6,4 @@ The Udagram application monorepo
 ## Packages
 [Udagram Ionic Frontend App](packages/aws-udagram-frontend/README.md)
 
-[Udgram REST API App](packages/aws-udagram-restapi/README.md)
+[Udagram REST API App](packages/aws-udagram-restapi/README.md)

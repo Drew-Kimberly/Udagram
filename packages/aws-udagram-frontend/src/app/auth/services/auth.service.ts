@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../models/user.model';
-import { ApiService } from 'src/app/api/api.service';
+import { ApiService } from '../../api/api.service';
 
 const JWT_LOCALSTORE_KEY = 'jwt';
 const USER_LOCALSTORE_KEY = 'user';

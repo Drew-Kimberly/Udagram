@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
+import { OperatorFunction } from 'rxjs';
 
 const API_HOST = environment.apiHost;
 
@@ -38,7 +39,9 @@ export class ApiService {
     const url = `${API_HOST}${endpoint}`;
     const req = this.http
       .get(url, this.httpOptions)
-      .pipe(map(ApiService.extractData));
+      .pipe(
+        map(ApiService.extractData) as OperatorFunction<Record<string, any>, {}>
+      );
 
     return req.toPromise().catch(e => {
       this.handleError(e);

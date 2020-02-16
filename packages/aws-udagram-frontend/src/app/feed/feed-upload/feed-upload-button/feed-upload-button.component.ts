@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FeedUploadComponent } from '../feed-upload.component';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { AuthService } from '../../../auth/services/auth.service';
 import { Subscription } from 'rxjs';
 
 @Component({
