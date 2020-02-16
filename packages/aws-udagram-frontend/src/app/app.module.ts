@@ -14,17 +14,9 @@ import { AuthModule } from './auth/auth.module';
 import { ApiService } from './api/api.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenubarComponent
-  ],
+  declarations: [AppComponent, MenubarComponent],
   entryComponents: [],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    AuthModule
-  ],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AuthModule],
   providers: [
     ApiService,
     StatusBar,

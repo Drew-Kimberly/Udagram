@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input
+} from '@angular/core';
 import { FeedItem } from '../models/feed-item.model';
 
 @Component({
@@ -10,8 +15,7 @@ import { FeedItem } from '../models/feed-item.model';
 export class FeedItemComponent implements OnInit {
   @Input() feedItem: FeedItem;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

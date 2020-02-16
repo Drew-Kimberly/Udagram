@@ -7,17 +7,19 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-feed-upload-button',
   templateUrl: './feed-upload-button.component.html',
-  styleUrls: ['./feed-upload-button.component.scss'],
+  styleUrls: ['./feed-upload-button.component.scss']
 })
 export class FeedUploadButtonComponent implements OnInit, OnDestroy {
-
-  isLoggedIn: Boolean;
+  isLoggedIn: boolean;
   loginSub: Subscription;
 
-  constructor(private modalController: ModalController, private auth: AuthService) { }
+  constructor(
+    private modalController: ModalController,
+    private auth: AuthService
+  ) {}
 
   ngOnInit() {
-    this.auth.currentUser$.subscribe((user) => {
+    this.auth.currentUser$.subscribe(user => {
       this.isLoggedIn = user !== null;
     });
   }
@@ -28,11 +30,10 @@ export class FeedUploadButtonComponent implements OnInit, OnDestroy {
     }
   }
 
-  async presentUploadForm(ev: any) {
+  async presentUploadForm() {
     const modal = await this.modalController.create({
-      component: FeedUploadComponent,
+      component: FeedUploadComponent
     });
     return await modal.present();
   }
-
 }

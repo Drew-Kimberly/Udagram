@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/api/api.service';
 
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import {
+  Validators,
+  FormBuilder,
+  FormGroup,
+  FormControl
+} from '@angular/forms';
 import { FeedProviderService } from '../services/feed.provider.service';
 
 import { LoadingController, ModalController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-feed-upload',
   templateUrl: './feed-upload.component.html',
-  styleUrls: ['./feed-upload.component.scss'],
+  styleUrls: ['./feed-upload.component.scss']
 })
 export class FeedUploadComponent implements OnInit {
   previewDataUrl;
@@ -22,7 +25,7 @@ export class FeedUploadComponent implements OnInit {
     private formBuilder: FormBuilder,
     private loadingController: LoadingController,
     private modalController: ModalController
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
@@ -31,7 +34,7 @@ export class FeedUploadComponent implements OnInit {
   }
 
   setPreviewDataUrl(file: Blob) {
-    const reader  = new FileReader();
+    const reader = new FileReader();
     reader.onloadend = () => {
       this.previewDataUrl = reader.result;
     };
@@ -47,16 +50,18 @@ export class FeedUploadComponent implements OnInit {
     }
     this.file = file[0];
     this.setPreviewDataUrl(this.file);
-
   }
 
   onSubmit($event) {
     $event.preventDefault();
     this.loadingController.create();
 
-    if (!this.uploadForm.valid || !this.file) { return; }
-    this.feed.uploadFeedItem(this.uploadForm.controls.caption.value, this.file)
-      .then((result) => {
+    if (!this.uploadForm.valid || !this.file) {
+      return;
+    }
+    this.feed
+      .uploadFeedItem(this.uploadForm.controls.caption.value, this.file)
+      .then(() => {
         this.modalController.dismiss();
         this.loadingController.dismiss();
       });

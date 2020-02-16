@@ -1,0 +1,12 @@
+{
+  "extends": "../../.eslintrc.base.json",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jasmine": true
+  },
+  "rules": {
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-empty-function": 0
+  }
+}

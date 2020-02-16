@@ -4,11 +4,10 @@ import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-auth-menu-user',
   templateUrl: './auth-menu-user.component.html',
-  styleUrls: ['./auth-menu-user.component.scss'],
+  styleUrls: ['./auth-menu-user.component.scss']
 })
 export class AuthMenuUserComponent implements OnInit {
-
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {}
 

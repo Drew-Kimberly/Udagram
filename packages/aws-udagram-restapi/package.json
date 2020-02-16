@@ -1,5 +1,5 @@
 {
-  "name": "aws-udagram-restapi",
+  "name": "udagram-restapi",
   "version": "1.0.0",
   "description": "",
   "author": "Drew Kimberly",
@@ -41,14 +41,14 @@
     "mocha": "^6.2.2"
   },
   "scripts": {
-    "start": "node .",
     "tsc": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "start": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "test": "echo \"No tests implemented\" && exit 0",
     "lint": "eslint --max-warnings 0 --ext .ts src",
+    "lint:fix": "eslint --fix --ext .ts src",
     "typecheck": "tsc --noEmit",
     "ci": "npm run lint && npm run typecheck"
   }
