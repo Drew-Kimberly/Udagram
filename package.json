@@ -1,0 +1,40 @@
+{
+  "name": "udagram-monorepo",
+  "version": "1.0.0",
+  "description": "The Udagram app monorepo root",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Drew-Kimberly/Udagram.git"
+  },
+  "author": "Drew Kimberly",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Drew-Kimberly/Udagram/issues"
+  },
+  "homepage": "https://github.com/Drew-Kimberly/Udagram#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap --no-ci",
+    "build": "lerna run build --stream",
+    "ci": "npm run lint && npm run typecheck && npm run test",
+    "clean": "lerna clean -y",
+    "lint": "lerna run lint --stream",
+    "postinstall": "npm run bootstrap",
+    "start": "lerna run start --stream",
+    "test": "lerna run test --stream",
+    "typecheck": "lerna run typecheck --stream -- --noEmit"
+  }
+}
