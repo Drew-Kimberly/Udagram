@@ -29,7 +29,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --no-ci",
     "build": "lerna run build --stream",
-    "ci": "npm run lint && npm run typecheck && npm run test",
+    "ci": "lerna run ci --stream",
     "clean": "lerna clean -y",
     "lint": "lerna run lint --stream",
     "lint:fix": "lerna run lint:fix --stream",
