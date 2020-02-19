@@ -16,6 +16,7 @@ import { V0MODELS } from './controllers/v0/model.index';
 
   // Setup CORS middleware.
   const originWhitelist = [
+    'http://localhost:4200',
     'http://localhost:8100',
     'http://d3puk6p5a7fcax.cloudfront.net'
   ];

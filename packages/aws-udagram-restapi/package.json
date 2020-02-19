@@ -43,9 +43,9 @@
   "scripts": {
     "tsc": "tsc",
     "start": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
-    "prod": "tsc && node ./www/server.js",
+    "build:prod": "npm run build:dev",
     "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp -rf src/config www/config && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "build:dev": "npm run clean && tsc && cp -rf src/config www/config && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"No tests implemented\" && exit 0",
     "lint": "eslint --max-warnings 0 --ext .ts src",
     "lint:fix": "eslint --fix --ext .ts src",
