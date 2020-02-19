@@ -54,7 +54,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:dev": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "eslint --max-warnings 0 --ext .ts,.js src",
     "lint:fix": "eslint --fix --ext .ts,.js src",
