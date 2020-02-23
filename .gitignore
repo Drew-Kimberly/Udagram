@@ -35,3 +35,4 @@ node_modules
 packages/**/node_modules
 www/
 packages/**/www
+packages/**/dist
