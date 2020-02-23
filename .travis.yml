@@ -17,8 +17,8 @@ jobs:
     - stage: test
       script: ./scripts/travisci/test.sh
     - stage: monorepo-split
-      if: branch = master
+      if: (branch = master) AND (type = push)
       script: ./scripts/travisci/monorepo-split.sh
     - stage: deploy
-      if: branch = master
+      if: (branch = master) AND (type = push)
       script: ./scripts/travisci/deploy.sh
