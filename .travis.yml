@@ -10,15 +10,41 @@ notifications:
     - recipients:
         - andrew.e.kimberly@gmail.com
 
-jobs:
-  include:
-    - stage: build
-      script: ./scripts/travisci/build.sh
-    - stage: test
-      script: ./scripts/travisci/test.sh
-    - stage: monorepo-split
-      if: (branch = master) AND (type = push)
-      script: ./scripts/travisci/monorepo-split.sh
-    - stage: deploy
-      if: (branch = master) AND (type = push)
-      script: ./scripts/travisci/deploy.sh
+install:
+#  - npm install -g travis-ci-cloudfront-invalidation
+  - npm i
+  - npm run build:prod
+
+script:
+  - npm run ci
+
+### REST API Deployment
+#deploy:
+#  provider: elasticbeanstalk
+#  access_key_id:
+#    secure: $AWS_ACCESS_KEY
+#  secret_access_key:
+#    secure: $AWS_SECRET_ACCESS_KEY
+#  bucket: $AWS_EB_S3_BUCKET # The S3 bucket EB uses to store the application files.
+#  region: $AWS_REGION
+#  app: $AWS_EB_APP
+#  env: $AWS_EB_ENV
+#  zip_file: './www/Archive.zip'
+#  skip_cleanup: true
+#  on:
+#    tags: true
+
+### Front-end Deployment
+#deploy:
+#  provider: s3
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_ACCESS_KEY
+#  bucket: $AWS_S3_BUCKET
+#  skip_cleanup: true
+#  region: $AWS_REGION
+#  local_dir: www
+#  on:
+#    tags: true
+#
+#after_deploy:
+#  - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY -s $AWS_SECRET_ACCESS_KEY -c $AWS_CF_ID -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST -o $TRAVIS_BRANCH
