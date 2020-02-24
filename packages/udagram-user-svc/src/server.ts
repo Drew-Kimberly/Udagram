@@ -9,7 +9,7 @@ import { V0MODELS } from './controllers/v0/model.index';
   await sequelize.sync();
 
   const app = express();
-  const port = process.env.PORT || 8080; // default port to listen
+  const port = process.env.UDAGRAM_USER_SVC_PORT || process.env.PORT || 8080; // default port to listen
 
   app.use(bodyParser.json());
 
