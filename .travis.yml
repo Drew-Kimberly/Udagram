@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "stable"
+
 cache:
   directories:
     - node_modules
@@ -14,11 +15,21 @@ jobs:
   include:
     - stage: build
       script: ./scripts/travisci/build.sh
+
     - stage: test
       script: ./scripts/travisci/test.sh
+
     - stage: monorepo-split
       if: (branch = master) AND (type = push)
+      before_script:
+        # Encrypted SSH Deploy key: https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md
+        - openssl aes-256-cbc -K $encrypted_a4fee1ae537a_key -iv $encrypted_a4fee1ae537a_iv -in udagram_rsa.enc -out ~/.ssh/udagram_rsa -d
+        - eval "$(ssh-agent -s)"
+        - chmod 600 ~/.ssh/udagram_rsa
+        - ssh-add ~/.ssh/udagram_rsa
+        - ssh-keyscan -H 'github.com' >> ~/.ssh/known_hosts
       script: ./scripts/travisci/monorepo-split.sh
+
     - stage: deploy
       if: (branch = master) AND (type = push)
       script: ./scripts/travisci/deploy.sh
