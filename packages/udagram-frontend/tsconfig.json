@@ -3,6 +3,7 @@
   "include": ["./src"],
   "compilerOptions": {
     "outDir": "./www",
+    "baseUrl": ".",
     "importHelpers": true,
     "isolatedModules": false,
     "noImplicitAny": false,
@@ -15,7 +16,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@angular/*": ["../../node_modules/@angular/*"]
+    }
   },
   "files": [
     "./src/test.ts",
