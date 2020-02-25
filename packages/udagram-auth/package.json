@@ -1,6 +1,6 @@
 {
   "name": "@drewkimberly/udagram-auth",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Authentication package for the Udagram app.",
   "author": "Drew Kimberly",
   "license": "MIT",
@@ -31,5 +31,5 @@
     "typecheck": "tsc --noEmit",
     "ci": "npm run lint && npm run typecheck"
   },
-  "gitHead": "f446f1688e8b2a4fb4aad807f0647554821e2901"
+  "gitHead": "a81aa9d3df43dbca528845a1bb400d5eb38b41ac"
 }
