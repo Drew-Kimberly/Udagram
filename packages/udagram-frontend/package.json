@@ -4,6 +4,8 @@
   "author": "Drew Kimberly",
   "description": "The Udagram app frontend",
   "homepage": "https://github.com/Drew-Kimberly/udagram-frontend#readme",
+  "license": "UNLICENSED",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/Drew-Kimberly/udagram-frontend"
@@ -64,5 +66,6 @@
     "e2e": "ng e2e",
     "typecheck": "tsc --noEmit",
     "ci": "npm run lint && npm run typecheck"
-  }
+  },
+  "gitHead": "f446f1688e8b2a4fb4aad807f0647554821e2901"
 }

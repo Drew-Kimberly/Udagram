@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "Authentication package for the Udagram app.",
   "author": "Drew Kimberly",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Drew-Kimberly/udagram-feed-svc"
@@ -30,5 +30,6 @@
     "lint:fix": "eslint --fix --ext .ts src",
     "typecheck": "tsc --noEmit",
     "ci": "npm run lint && npm run typecheck"
-  }
+  },
+  "gitHead": "f446f1688e8b2a4fb4aad807f0647554821e2901"
 }
