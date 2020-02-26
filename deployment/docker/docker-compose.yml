@@ -1,0 +1,42 @@
+version: "3"
+services:
+  reverse-proxy:
+    image: uncledrewbie/udagram-reverse-proxy
+    ports:
+      - 8080:8080
+    restart: always
+    depends_on:
+      - feed-svc
+      - user-svc
+  user-svc:
+    image: uncledrewbie/udagram-user-svc
+    volumes:
+      - $HOME/.aws:/root/.aws
+    environment:
+      UDAGRAM_DB_USER: $UDAGRAM_DB_USER
+      UDAGRAM_DB_PASSWORD: $UDAGRAM_DB_PASSWORD
+      UDAGRAM_DB_NAME: $UDAGRAM_DB_NAME
+      UDAGRAM_DB_HOST: $UDAGRAM_DB_HOST
+      UDAGRAM_AWS_REGION: $UDAGRAM_AWS_REGION
+      UDAGRAM_AWS_PROFILE: $UDAGRAM_AWS_PROFILE
+      UDAGRAM_S3_BUCKET: $UDAGRAM_S3_BUCKET
+      UDAGRAM_JWT_KEY: $UDAGRAM_JWT_KEY
+      URL: "http://localhost:8100"
+  feed-svc:
+    image: uncledrewbie/udagram-feed-svc
+    volumes:
+      - $HOME/.aws:/root/.aws
+    environment:
+      UDAGRAM_DB_USER: $UDAGRAM_DB_USER
+      UDAGRAM_DB_PASSWORD: $UDAGRAM_DB_PASSWORD
+      UDAGRAM_DB_NAME: $UDAGRAM_DB_NAME
+      UDAGRAM_DB_HOST: $UDAGRAM_DB_HOST
+      UDAGRAM_AWS_REGION: $UDAGRAM_AWS_REGION
+      UDAGRAM_AWS_PROFILE: $UDAGRAM_AWS_PROFILE
+      UDAGRAM_S3_BUCKET: $UDAGRAM_S3_BUCKET
+      UDAGRAM_JWT_KEY: $UDAGRAM_JWT_KEY
+      URL: "http://localhost:8100"
+  frontend:
+    image: uncledrewbie/udagram-frontend
+    ports:
+      - "8100:80"

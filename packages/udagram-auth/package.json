@@ -1,14 +1,14 @@
 {
   "name": "@drewkimberly/udagram-auth",
-  "version": "0.1.0",
+  "version": "0.6.0",
   "description": "Authentication package for the Udagram app.",
   "author": "Drew Kimberly",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Drew-Kimberly/udagram-feed-svc"
+    "url": "https://github.com/Drew-Kimberly/udagram-auth"
   },
-  "homepage": "https://github.com/Drew-Kimberly/udagram-feed-svc#readme",
+  "homepage": "https://github.com/Drew-Kimberly/udagram-authc#readme",
   "main": "dist/index.js",
   "engines": {
     "node": ">=8.10.0"
