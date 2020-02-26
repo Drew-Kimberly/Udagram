@@ -1,6 +1,6 @@
 {
   "name": "@drewkimberly/udagram-auth",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Authentication package for the Udagram app.",
   "author": "Drew Kimberly",
   "license": "MIT",
