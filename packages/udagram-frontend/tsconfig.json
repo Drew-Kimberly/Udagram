@@ -1,12 +1,19 @@
 {
-  "extends": "../../tsconfig.base",
   "include": ["./src"],
   "compilerOptions": {
+    "target": "es5",
     "outDir": "./www",
     "baseUrl": ".",
+    "sourceMap": true,
     "importHelpers": true,
     "isolatedModules": false,
+    "strict": true,
+    "strictNullChecks": false,
     "noImplicitAny": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "module": "es2015",
     "types": [
       "jasmine",
