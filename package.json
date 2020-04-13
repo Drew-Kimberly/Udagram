@@ -68,16 +68,6 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "k8s:apply": "npm-run-all --parallel k8s:apply:*",
-    "k8s:destroy": "npm-run-all --parallel k8s:destroy:*",
-    "k8s:apply:feed-svc": "kubectl apply -f k8s/udagram-feed-svc",
-    "k8s:apply:frontend": "kubectl apply -f k8s/udagram-frontend",
-    "k8s:apply:reverse-proxy": "kubectl apply -f k8s/udagram-reverse-proxy",
-    "k8s:apply:user-svc": "kubectl apply -f k8s/udagram-user-svc",
-    "k8s:destroy:feed-svc": "kubectl delete -f  k8s/udagram-feed-svc",
-    "k8s:destroy:frontend": "kubectl delete -f k8s/udagram-frontend",
-    "k8s:destroy:reverse-proxy": "kubectl delete -f k8s/udagram-reverse-proxy",
-    "k8s:destroy:user-svc": "kubectl delete -f k8s/udagram-user-svc",
     "bootstrap": "lerna bootstrap --no-ci --hoist",
     "build:dev": "npm-run-all --parallel *:build:dev",
     "build:prod": "npm run build:dev",

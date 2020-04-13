@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: user-svc
-  name: user-svc
+    service: feed-svc
+  name: feed-svc
 spec:
   replicas: 2
   selector:
     matchLabels:
-      service: user-svc
+      service: feed-svc
   template:
     metadata:
       labels:
-        service: user-svc
+        service: feed-svc
     spec:
       containers:
-        - image: uncledrewbie/udagram-user-svc
-          name: user-svc
+        - image: uncledrewbie/udagram-feed-svc:{IMAGE_TAG}
+          name: feed-svc
           imagePullPolicy: Always
           resources:
             requests:
@@ -27,7 +27,7 @@ spec:
               cpu: "500m"
           envFrom:
             - configMapRef:
-                name: user-svc-env-config
+                name: feed-svc-env-config
           env:
             - name: UDAGRAM_DB_USER
               valueFrom:
@@ -39,11 +39,6 @@ spec:
                 secretKeyRef:
                   key: password
                   name: udagram-db-secret
-            - name: UDAGRAM_JWT_KEY
-              valueFrom:
-                secretKeyRef:
-                  key: key
-                  name: udagram-jwt-secret
           ports:
             - containerPort: 8080
       restartPolicy: Always
