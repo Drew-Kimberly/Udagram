@@ -1,0 +1,9 @@
+*
+!src
+!e2e
+!udacity_tests
+!angular.json
+!ionic.config.json
+!package*.json
+!tsconfig.json
+!Dockerfile
