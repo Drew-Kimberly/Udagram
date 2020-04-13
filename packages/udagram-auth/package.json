@@ -1,24 +1,28 @@
 {
   "name": "@drewkimberly/udagram-auth",
-  "version": "0.6.0",
+  "version": "0.7.3",
   "description": "Authentication package for the Udagram app.",
   "author": "Drew Kimberly",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Drew-Kimberly/udagram-feed-svc"
+    "url": "https://github.com/Drew-Kimberly/udagram-auth"
   },
-  "homepage": "https://github.com/Drew-Kimberly/udagram-feed-svc#readme",
+  "homepage": "https://github.com/Drew-Kimberly/udagram-authc#readme",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "engines": {
     "node": ">=8.10.0"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^8.3.7",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.2",
-    "@types/jsonwebtoken": "^8.3.7"
+    "@types/express": "^4.17.2"
   },
   "scripts": {
     "tsc": "tsc",
@@ -31,5 +35,5 @@
     "typecheck": "tsc --noEmit",
     "ci": "npm run lint && npm run typecheck"
   },
-  "gitHead": "a81aa9d3df43dbca528845a1bb400d5eb38b41ac"
+  "gitHead": "f446f1688e8b2a4fb4aad807f0647554821e2901"
 }
