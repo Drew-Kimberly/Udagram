@@ -20,7 +20,7 @@ jobs:
       script: ./scripts/travisci/test.sh
 
     - stage: build-and-push-images
-#      if: (branch = master) AND (type = push)
+      if: (branch = master) AND (type = push)
       script: ./scripts/travisci/build-app-images.sh
 
     - stage: monorepo-split
