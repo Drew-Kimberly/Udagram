@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "stable"
+  - 12
 
 cache:
   directories:
@@ -19,10 +19,6 @@ jobs:
     - stage: test
       script: ./scripts/travisci/test.sh
 
-    - stage: build-and-push-images
-      if: (branch = master) AND (type = push)
-      script: ./scripts/travisci/build-app-images.sh
-
     - stage: monorepo-split
       if: (branch = master) AND (type = push)
       before_script:
@@ -33,6 +29,10 @@ jobs:
         - ssh-add ~/.ssh/udagram_rsa
         - ssh-keyscan -H 'github.com' >> ~/.ssh/known_hosts
       script: ./scripts/travisci/monorepo-split.sh
+
+    - stage: build-and-push-images
+      if: (branch = master) AND (type = push)
+      script: ./scripts/travisci/build-app-images.sh
 
     - stage: deploy
       if: (branch = master) AND (type = push)
