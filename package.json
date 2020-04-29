@@ -13,12 +13,7 @@
     "url": "https://github.com/Drew-Kimberly/Udagram/issues"
   },
   "homepage": "https://github.com/Drew-Kimberly/Udagram#readme",
-  "dependencies": {
-    "@drewkimberly/udagram-auth": "file:packages/udagram-auth",
-    "@drewkimberly/udagram-feed-svc": "file:packages/udagram-feed-svc",
-    "@drewkimberly/udagram-frontend": "file:packages/udagram-frontend",
-    "@drewkimberly/udagram-user-svc": "file:packages/udagram-user-svc"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
     "@angular-devkit/build-angular": "^0.803.25",
@@ -68,7 +63,7 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --no-ci --hoist",
+    "bootstrap": "lerna bootstrap --ci --hoist --force-local",
     "build:dev": "npm-run-all --parallel *:build:dev",
     "build:prod": "npm run build:dev",
     "build-images": "npm-run-all --parallel \"*:build-image -- {@}\" --",
