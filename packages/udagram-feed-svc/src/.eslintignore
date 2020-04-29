@@ -1,3 +1,2 @@
 node_modules
-src/superagent.d.ts
 src/cordova.d.ts
