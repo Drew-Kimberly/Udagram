@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fbe38993-cdf1-4c52-a5ae-06d19b7b2416",
+		"_postman_id": "58887383-cb71-4002-bebf-8871603378c7",
 		"name": "udagram-feed-svc",
 		"description": "Collection for the Udagram Feed API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -93,6 +93,10 @@
 							],
 							"query": [
 								{
+									"key": "",
+									"value": null
+								},
+								{
 									"key": "id",
 									"value": "4",
 									"disabled": true
@@ -101,7 +105,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "3"
+									"value": "8"
 								}
 							]
 						},
@@ -442,13 +446,7 @@
 	],
 	"variable": [
 		{
-			"id": "cdcaec9c-d063-4282-8c1f-d06679ae34bc",
-			"key": "host",
-			"value": "http://localhost:8083",
-			"type": "string"
-		},
-		{
-			"id": "b47e490f-f0ab-4ca2-a707-defa2bcf2ec6",
+			"id": "91013807-4714-47c9-a8a8-450f422f528c",
 			"key": "token",
 			"value": "",
 			"type": "string"
