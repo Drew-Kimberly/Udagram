@@ -36,3 +36,5 @@ packages/**/node_modules
 www/
 packages/**/www
 packages/**/dist
+
+AWSCLIV2.pkg
