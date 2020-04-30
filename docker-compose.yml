@@ -13,8 +13,8 @@ services:
     command: npm run start
     volumes:
       - $HOME/.aws:/root/.aws
-      - ./packages/udagram-user-svc:/usr/udagram-root/packages/app
-      - /usr/udagram-root/packages/app/node_modules
+      - ./packages/udagram-user-svc:/usr/src/app
+      - /usr/src/app/node_modules
     environment:
       UDAGRAM_DB_USER: $UDAGRAM_DB_USER
       UDAGRAM_DB_PASSWORD: $UDAGRAM_DB_PASSWORD
@@ -31,8 +31,8 @@ services:
     command: npm run start
     volumes:
       - $HOME/.aws:/root/.aws
-      - ./packages/udagram-feed-svc:/usr/udagram-root/packages/app
-      - /usr/udagram-root/packages/app/node_modules
+      - ./packages/udagram-feed-svc:/usr/src/app
+      - /usr/src/app/node_modules
     environment:
       UDAGRAM_DB_USER: $UDAGRAM_DB_USER
       UDAGRAM_DB_PASSWORD: $UDAGRAM_DB_PASSWORD
@@ -46,5 +46,7 @@ services:
       URL: "http://localhost:8100"
   frontend:
     image: uncledrewbie/udagram-frontend
+    volumes:
+      - ./packages/udagram-frontend/www:/usr/share/nginx/html
     ports:
       - "8100:80"
