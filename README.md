@@ -77,6 +77,10 @@ The name of the AWS S3 bucket used for storing Udagram images.
 #### `UDAGRAM_JWT_KEY`
 The JWT Key secret used for Udagram API auth.
 
+Before starting the application, please request a `.env` file that contains the
+default values for these env variables and place this file at the root of this
+repository.
+
 ### Running the application
 [Docker Compose](https://docs.docker.com/compose/) is used to run the application during local development. Run:
 ```shell script
