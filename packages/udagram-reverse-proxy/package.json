@@ -1,6 +1,6 @@
 {
   "name": "@drewkimberly/udagram-reverse-proxy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The Nginx reverse proxy implementation for the Udagram application",
   "author": "Drew Kimberly",
   "license": "UNLICENSED",
