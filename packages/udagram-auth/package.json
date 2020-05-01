@@ -1,6 +1,6 @@
 {
   "name": "@drewkimberly/udagram-auth",
-  "version": "0.7.3",
+  "version": "1.0.0",
   "description": "Authentication package for the Udagram app.",
   "author": "Drew Kimberly",
   "license": "MIT",
@@ -22,7 +22,6 @@
     "@types/jsonwebtoken": "^8.3.7",
     "jsonwebtoken": "^8.5.1"
   },
-  "devDependencies": {},
   "scripts": {
     "tsc": "tsc",
     "build:prod": "npm run build:dev",
