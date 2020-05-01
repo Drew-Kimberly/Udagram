@@ -4,6 +4,7 @@ APPS_DIR="$(dirname $(realpath $0))/apps"
 
 # The image tag provided to deploy (defaults to latest).
 IMAGE_TAG="${1:-latest}"
+echo "Using image tag: ${IMAGE_TAG}"
 
 for app in "$APPS_DIR"/*
 do

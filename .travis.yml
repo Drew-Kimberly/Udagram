@@ -39,7 +39,7 @@ jobs:
       before_script:
         - ./scripts/travisci/helpers/install_kubectl.sh
         - ./scripts/travisci/helpers/install_aws_cli.sh
-      script: ./scripts/travisci/deploy.sh
+      script: ./scripts/travisci/deploy.sh $AWS_REGION $AWS_EKS_CLUSTER $TRAVIS_COMMIT
 
     - stage: integration_test
       if: (branch = master) AND (type = push)
