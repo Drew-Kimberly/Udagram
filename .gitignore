@@ -38,3 +38,4 @@ packages/**/www
 packages/**/dist
 
 AWSCLIV2.pkg
+.env
