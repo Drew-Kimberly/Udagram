@@ -36,4 +36,15 @@ jobs:
 
     - stage: deploy
       if: (branch = master) AND (type = push)
+      before_script:
+        - ./scripts/travisci/helpers/install_kubectl.sh
+        - ./scripts/travisci/helpers/install_aws_cli.sh
       script: ./scripts/travisci/deploy.sh
+
+    - stage: integration_test
+      if: (branch = master) AND (type = push)
+      before_script:
+        - npm i -g newman
+      script:
+        - newman run ./postman/collections/udagram-feed-svc.postman_collection.json --environment ./postman/environments/udagram_dev.postman_environment.json --folder Public
+        - newman run ./postman/collections/udagram-user-svc.postman_collection.json --environment ./postman/environments/udagram_dev.postman_environment.json
