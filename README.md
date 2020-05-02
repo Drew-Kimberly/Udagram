@@ -32,13 +32,13 @@ the monorepo.
 ### Requirements
 __Required__:
 - [NodeJS](https://nodejs.org/en/download/) (v10.x or greater)
-- [Ionic CLI](https://ionicframework.com/docs/installation/cli)
 - [Docker](https://docs.docker.com/get-docker/)
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (v2.x)
 
 __Recommended__:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (v2.x)
 - [Postman](https://www.postman.com/downloads/)
+- [Ionic CLI](https://ionicframework.com/docs/installation/cli)
 
 ### Installing Dependencies
 Once the repository is cloned and all requirements are installed, run:
@@ -46,6 +46,14 @@ Once the repository is cloned and all requirements are installed, run:
 npm i
 ```
 This will install all project dependencies and bootstrap/hoist packages using Lerna.
+
+### Compiling the Apps Locally
+After dependencies are installed, compile the applications using:
+```shell script
+npm run build:dev
+```
+Technically, you just need to run `npm run frontend:build:dev` as the compiled front-end app
+is mounted to the frontend container when running `docker-compose` locally.
 
 ### Environment Variables
 The following environment variables are required to run the Udagram application locally:
@@ -80,6 +88,12 @@ The JWT Key secret used for Udagram API auth.
 Before starting the application, please request a `.env` file that contains the
 default values for these env variables and place this file at the root of this
 repository.
+
+### Configuring the AWS CLI
+Before running the application locally, you'll need to configure AWS credentials
+that provide access to retrieve signed URLs from the Udagram S3 bucket. After retrieving
+the credentials, run `aws configure` and enter in the access key ID and secret access key.
+The profile name should match the value set in the `UDAGRAM_AWS_PROFILE` environment variable.
 
 ### Running the application
 [Docker Compose](https://docs.docker.com/compose/) is used to run the application during local development. Run:
